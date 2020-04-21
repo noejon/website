@@ -1,11 +1,14 @@
-import * as React from 'react';
+import styled from 'styled-components'
 import Alert from './alert'
 import Footer from './footer'
 import Meta from './meta'
+import Reset from './reset'
 
 type Props = {
   preview?: boolean
 }
+
+
 
 const Layout: React.FunctionComponent<Props> = ({ preview, children }) => {
   return (
@@ -16,6 +19,7 @@ const Layout: React.FunctionComponent<Props> = ({ preview, children }) => {
         <main>{children}</main>
       </div>
       <Footer />
+      <Reset/>
     </>
   )
 }
