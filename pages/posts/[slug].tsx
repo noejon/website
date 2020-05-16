@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Container from '../../components/container'
+// import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
@@ -13,18 +13,17 @@ import markdownToHtml from '../../lib/markdownToHtml'
 import { PostItem } from '../../interfaces'
 
 type props = {
-  post: PostItem,
-  preview?: boolean
+  post: PostItem
 } 
 
-const Post: React.FunctionComponent<props> = ({ post, preview = false}) => {
+const Post: React.FunctionComponent<props> = ({ post}) => {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview}>
-      <Container>
+    <Layout>
+      <div>
         <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
@@ -47,7 +46,7 @@ const Post: React.FunctionComponent<props> = ({ post, preview = false}) => {
             </article>
           </>
         )}
-      </Container>
+      </div>
     </Layout>
   )
 }

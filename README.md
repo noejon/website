@@ -52,3 +52,27 @@ yarn dev
 Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/zeit/next.js/discussions).
 
 Deploy it to the cloud with [ZEIT Now](https://zeit.co/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+
+# Notes:
+
+I usually read blog posts on my phone, so this blog has been developed with mobile first in mind!
+
+I worked on the website in the order it displays:
+- Header
+- Navbar
+
+@media screen and (max-width: ${({theme}) => theme.breakpoints.md}) {
+    body: {
+      overflow-x: hidden;
+    }
+  }
+
+For the navbar I decided to make a `hamburger menu` for mobile.
+
+Article ideas:
+- Theme
+- Global styles
+- TIL - Global Styles Theme
+- Themes and typescript
+- hamburger menu

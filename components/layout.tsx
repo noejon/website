@@ -1,25 +1,17 @@
-import styled from 'styled-components'
-import Alert from './alert'
 import Footer from './footer'
+import Header from './header'
 import Meta from './meta'
-import Reset from './reset'
+import Page from './page'
 
-type Props = {
-  preview?: boolean
-}
-
-
-
-const Layout: React.FunctionComponent<Props> = ({ preview, children }) => {
+const Layout: React.FunctionComponent = ({ children }) => {
   return (
     <>
       <Meta />
-      <div className="min-h-screen">
-        <Alert preview={preview} />
+      <Page>
+        <Header />
         <main>{children}</main>
-      </div>
-      <Footer />
-      <Reset/>
+        <Footer />  
+      </Page>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import Container from '../components/container'
+// import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'
@@ -16,7 +16,7 @@ export default function Index({ allPosts }) {
         <Head>
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
-        <Container>
+        <div>
           <Intro />
           {heroPost && (
             <HeroPost
@@ -29,7 +29,7 @@ export default function Index({ allPosts }) {
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
+        </div>
       </Layout>
     </>
   )
