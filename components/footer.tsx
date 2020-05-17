@@ -1,5 +1,5 @@
 // import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
+import { EXAMPLE_PATH } from '../lib/constants';
 
 const Footer: React.FunctionComponent = () => {
   return (
@@ -26,7 +26,7 @@ const Footer: React.FunctionComponent = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

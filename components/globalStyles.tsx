@@ -1,8 +1,8 @@
-import {createGlobalStyle} from 'styled-components'
-import {darken} from 'polished'
-import {ThemeType} from '../lib/theme'
+import { createGlobalStyle } from 'styled-components';
+import { darken } from 'polished';
+import { ThemeType } from '../lib/theme';
 
-const GlobalStyles = createGlobalStyle<{theme: ThemeType}>`
+const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   /**
     RESET
   */
@@ -83,15 +83,15 @@ const GlobalStyles = createGlobalStyle<{theme: ThemeType}>`
 
   html {
     --size: 40px;
-    @media(max-width: ${({theme}) => theme.breakpoints.md}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.md}) {
       --size: 3px;
     }
     --borderSize: calc(var(--size) / 2);
     font-size: 16px;
-    font-family: ${({theme}) => theme.fonts.copy};
-    color: ${({theme}) => theme.colors.darkGrey};
-    border: var(--borderSize) solid ${({theme}) => theme.colors.lightGrey};
-    border-color: ${({theme}) => theme.colors.lightGrey};
+    font-family: ${({ theme }) => theme.fonts.copy};
+    color: ${({ theme }) => theme.colors.darkGrey};
+    border: var(--borderSize) solid ${({ theme }) => theme.colors.lightGrey};
+    border-color: ${({ theme }) => theme.colors.lightGrey};
     position: relative;
   }
 
@@ -101,22 +101,22 @@ const GlobalStyles = createGlobalStyle<{theme: ThemeType}>`
     line-height: 1.5;
   }
 
-  @media screen and (max-width: ${({theme}) => theme.breakpoints.md}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
     body: {
       overflow-x: hidden;
     }
   }
 
   h1,h2,h3,h4,h5,h6 {
-    font-family: ${({theme}) => theme.fonts.heading};
+    font-family: ${({ theme }) => theme.fonts.heading};
     font-weight: 600; /* Corresponding to semi-bold */
     line-height: 1.5;
-    color: ${({theme}) => theme.colors.darkerGrey};
+    color: ${({ theme }) => theme.colors.darkerGrey};
   }
 
   a {
     text-decoration: none;
-    color: ${({theme}) => darken(0.05, theme.colors.main)};
+    color: ${({ theme }) => darken(0.05, theme.colors.main)};
   }
 
   h1 a {
@@ -124,7 +124,7 @@ const GlobalStyles = createGlobalStyle<{theme: ThemeType}>`
   }
 
   ::selection {
-    background: ${({theme}) => theme.colors.darkerGrey};
+    background: ${({ theme }) => theme.colors.darkerGrey};
   }
 
   /* Scrollbar Styles */
@@ -133,15 +133,16 @@ const GlobalStyles = createGlobalStyle<{theme: ThemeType}>`
   }
   html {
     scrollbar-width: thin;
-    scrollbar-color: ${({theme}) => `${theme.colors.main} ${theme.colors.lightGrey}`};
+    scrollbar-color: ${({ theme }) =>
+      `${theme.colors.main} ${theme.colors.lightGrey}`};
   }
   body::-webkit-scrollbar-track {
-    background: ${({theme}) => theme.colors.lightGrey};
+    background: ${({ theme }) => theme.colors.lightGrey};
   }
   body::-webkit-scrollbar-thumb {
-    background-color: ${({theme}) => theme.colors.main};
+    background-color: ${({ theme }) => theme.colors.main};
     border-radius: 6px;
-    border: 3px solid ${({theme}) => theme.colors.lightGrey};
+    border: 3px solid ${({ theme }) => theme.colors.lightGrey};
   }
-`
-export default GlobalStyles
+`;
+export default GlobalStyles;

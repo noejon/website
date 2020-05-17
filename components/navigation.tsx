@@ -1,17 +1,9 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-const Nav = styled.nav`
-  
-`
-
-
+const Nav = styled.nav``;
 
 const Navigation: React.FunctionComponent = () => {
- return (
-   <Nav role="navigation">
+  return <Nav role="navigation"></Nav>;
+};
 
-   </Nav>
- ) 
-}
-
-export default Navigation
+export default Navigation;

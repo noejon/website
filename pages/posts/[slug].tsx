@@ -1,25 +1,25 @@
-import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
+import { useRouter } from 'next/router';
+import ErrorPage from 'next/error';
 // import Container from '../../components/container'
-import PostBody from '../../components/post-body'
-import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
-import Layout from '../../components/layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
-import PostTitle from '../../components/post-title'
-import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
-import markdownToHtml from '../../lib/markdownToHtml'
-import { PostItem } from '../../interfaces'
+import PostBody from '../../components/post-body';
+import Header from '../../components/header';
+import PostHeader from '../../components/post-header';
+import Layout from '../../components/layout';
+import { getPostBySlug, getAllPosts } from '../../lib/api';
+import PostTitle from '../../components/post-title';
+import Head from 'next/head';
+import { CMS_NAME } from '../../lib/constants';
+import markdownToHtml from '../../lib/markdownToHtml';
+import { PostItem } from '../../interfaces';
 
 type props = {
-  post: PostItem
-} 
+  post: PostItem;
+};
 
-const Post: React.FunctionComponent<props> = ({ post}) => {
-  const router = useRouter()
+const Post: React.FunctionComponent<props> = ({ post }) => {
+  const router = useRouter();
   if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />
+    return <ErrorPage statusCode={404} />;
   }
   return (
     <Layout>
@@ -48,9 +48,12 @@ const Post: React.FunctionComponent<props> = ({ post}) => {
         )}
       </div>
     </Layout>
-  )
-}
-export default Post
+  );
+};
+
+Post.propTypes = {};
+
+export default Post;
 
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
@@ -61,8 +64,8 @@ export async function getStaticProps({ params }) {
     'content',
     'ogImage',
     'coverImage',
-  ])
-  const content = await markdownToHtml(post.content || '')
+  ]);
+  const content = await markdownToHtml(post.content || '');
 
   return {
     props: {
@@ -71,20 +74,20 @@ export async function getStaticProps({ params }) {
         content,
       },
     },
-  }
+  };
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const posts = getAllPosts(['slug']);
 
   return {
-    paths: posts.map(posts => {
+    paths: posts.map((posts) => {
       return {
         params: {
           slug: posts.slug,
         },
-      }
+      };
     }),
     fallback: false,
-  }
+  };
 }

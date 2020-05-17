@@ -1,7 +1,7 @@
-import Footer from './footer'
-import Header from './header'
-import Meta from './meta'
-import Page from './page'
+import Footer from './footer';
+import Header from './header';
+import Meta from './meta';
+import Page from './page';
 
 const Layout: React.FunctionComponent = ({ children }) => {
   return (
@@ -10,10 +10,10 @@ const Layout: React.FunctionComponent = ({ children }) => {
       <Page>
         <Header />
         <main>{children}</main>
-        <Footer />  
+        <Footer />
       </Page>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

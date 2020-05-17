@@ -1,17 +1,22 @@
-import {Author} from '../interfaces';
-import Avatar from './avatar'
-import Date from './date'
-import CoverImage from './cover-image'
-import PostTitle from './post-title'
+import { Author } from '../interfaces';
+import Avatar from './avatar';
+import Date from './date';
+import CoverImage from './cover-image';
+import PostTitle from './post-title';
 
 type props = {
-  author: Author,
-  coverImage: string,
-  date: string,
-  title: string 
-}
+  author: Author;
+  coverImage: string;
+  date: string;
+  title: string;
+};
 
-const PostHeader: React.FunctionComponent<props> = ({ title, coverImage, date, author }) => {
+const PostHeader: React.FunctionComponent<props> = ({
+  title,
+  coverImage,
+  date,
+  author,
+}) => {
   return (
     <>
       <PostTitle>{title}</PostTitle>
@@ -30,7 +35,7 @@ const PostHeader: React.FunctionComponent<props> = ({ title, coverImage, date, a
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default PostHeader
+export default PostHeader;

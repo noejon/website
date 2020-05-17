@@ -1,10 +1,10 @@
-import markdownStyles from './markdown-styles.module.css'
+import markdownStyles from './markdown-styles.module.css';
 
 type props = {
-  content: string
-}
+  content: string;
+};
 
-const PostBody:React.FunctionComponent<props> = ({ content }) => {
+const PostBody: React.FunctionComponent<props> = ({ content }) => {
   return (
     <div className="max-w-2xl mx-auto">
       <div
@@ -12,7 +12,7 @@ const PostBody:React.FunctionComponent<props> = ({ content }) => {
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </div>
-  )
-}
+  );
+};
 
-export default PostBody
+export default PostBody;

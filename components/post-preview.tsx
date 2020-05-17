@@ -1,17 +1,17 @@
-import {Author} from '../interfaces'
-import Avatar from './avatar'
-import Date from './date'
-import CoverImage from './cover-image'
-import Link from 'next/link'
+import { Author } from '../interfaces';
+import Avatar from './avatar';
+import Date from './date';
+import CoverImage from './cover-image';
+import Link from 'next/link';
 
 type props = {
-  author: Author,
-  coverImage: string,
-  date: string,
-  excerpt: string,
-  slug: string,
-  title: string
-}
+  author: Author;
+  coverImage: string;
+  date: string;
+  excerpt: string;
+  slug: string;
+  title: string;
+};
 
 const PostPreview: React.FunctionComponent<props> = ({
   author,
@@ -19,7 +19,7 @@ const PostPreview: React.FunctionComponent<props> = ({
   date,
   excerpt,
   slug,
-  title
+  title,
 }) => {
   return (
     <div>
@@ -37,7 +37,7 @@ const PostPreview: React.FunctionComponent<props> = ({
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       <Avatar name={author.name} picture={author.picture} />
     </div>
-  )
-}
+  );
+};
 
-export default PostPreview
+export default PostPreview;

@@ -1,17 +1,17 @@
-import { Author } from '../interfaces'
-import Avatar from './avatar'
-import Date from './date'
-import CoverImage from './cover-image'
-import Link from 'next/link'
+import { Author } from '../interfaces';
+import Avatar from './avatar';
+import Date from './date';
+import CoverImage from './cover-image';
+import Link from 'next/link';
 
 type props = {
-  author: Author,
-  coverImage: string,
-  date: string,
-  excerpt: string,
-  slug: string,
-  title: string
-}
+  author: Author;
+  coverImage: string;
+  date: string;
+  excerpt: string;
+  slug: string;
+  title: string;
+};
 
 const HeroPost: React.FunctionComponent<props> = ({
   author,
@@ -43,7 +43,7 @@ const HeroPost: React.FunctionComponent<props> = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroPost
+export default HeroPost;
