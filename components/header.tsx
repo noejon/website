@@ -1,15 +1,10 @@
-import Link from 'next/link';
-import { HeaderWrapper, Subtitle, TitleContainer } from './header.styled';
+import { HeaderWrapper } from './header.styled';
+import Navigation from './navigation';
 
 const Header: React.FunctionComponent = () => {
   return (
     <HeaderWrapper>
-      <TitleContainer>
-        <h1>
-          <Link href="/">noejon.dev</Link>
-        </h1>
-        <Subtitle>Hello friends!</Subtitle>
-      </TitleContainer>
+      <Navigation />
     </HeaderWrapper>
   );
 };

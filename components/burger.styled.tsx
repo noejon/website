@@ -1,23 +1,39 @@
 import styled from 'styled-components';
-import { ThemeType } from '../lib/theme';
 
-export const Ingredient = styled.div<{ theme: ThemeType }>`
+const Ingredient = styled.div`
   width: 1.5rem;
-  height: 0.1rem;
-  background-color: ${({ theme }) => theme.colors.main};
-  margin: 0.3rem;
+  height: 3px;
+  background-color: ${({ theme }): string => theme.colors.main};
+  margin: 4px;
+  transition: all 0.2s ease;
 `;
 
-type HamburgerProps = {
-  show: boolean;
+type Props = {
+  toggled?: boolean;
 };
 
-export const Hamburger = styled.div<HamburgerProps>`
-  display: ${({ show }) => (show ? 'block' : 'none')};
+export const TopBread = styled(Ingredient)<Props>`
+  ${({ toggled }): string | undefined =>
+    toggled && 'transform: rotate(-45deg) translate(-5px, 5px)'};
 `;
 
-Hamburger.defaultProps = {
-  show: false,
-};
+export const Patty = styled(Ingredient)<Props>`
+  ${({ toggled }): string | undefined => toggled && 'opacity: 0'};
+`;
+
+export const BaseBread = styled(Ingredient)<Props>`
+  ${({ toggled }): string | undefined =>
+    toggled && 'transform: rotate(45deg) translate(-5px, -5px)'};
+`;
+
+export const Hamburger = styled.div`
+  display: none;
+
+  @media screen and (max-width: ${({ theme }): string =>
+      theme.breakpoints.md}) {
+    display: block;
+    cursor: pointer;
+  }
+`;
 
 Hamburger.displayName = 'Hamburger';
