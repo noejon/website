@@ -1,3 +1,5 @@
+import { darken, lighten } from 'polished';
+
 type BreakpointsType = {
   sm: string;
   md: string;
@@ -6,12 +8,15 @@ type BreakpointsType = {
 };
 
 type ColorsType = {
+  black: string;
   darkerGrey: string;
   darkGrey: string;
   grey: string;
   lighterGrey: string;
   lightGrey: string;
+  darkMain: string;
   main: string;
+  lightMain: string;
   white: string;
 };
 
@@ -34,12 +39,15 @@ const theme: ThemeType = {
     xl: '1366px',
   },
   colors: {
+    black: '#000000',
     darkerGrey: '#444444',
     darkGrey: '#666666',
     grey: '#aaaaaa',
     lightGrey: '#eaeaea',
     lighterGrey: '#f8f8f8',
-    main: '#0abab5',
+    darkMain: darken(0.05, '#009FE3'),
+    main: '#009FE3',
+    lightMain: lighten(0.05, '#009FE3'),
     white: '#ffffff',
   },
   fonts: {

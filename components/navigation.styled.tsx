@@ -21,7 +21,7 @@ type NavLinksProps = {
 
 export const NavLinks = styled.ul<NavLinksProps>`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 70%;
 
   @media screen and (max-width: ${({ theme }): string =>

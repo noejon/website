@@ -19,22 +19,32 @@ const Nav: React.FunctionComponent = () => {
       <NavLinks visible={navLinksVisible}>
         <li>
           <Link href="#" passHref>
-            <Heading as="a">Home</Heading>
+            <Heading as="a">About me</Heading>
           </Link>
         </li>
         <li>
           <Link href="#" passHref>
-            <Heading as="a">About</Heading>
+            <Heading as="a">Blog</Heading>
           </Link>
         </li>
         <li>
           <Link href="#" passHref>
-            <Heading as="a">Uses</Heading>
+            <Heading as="a">Tips</Heading>
           </Link>
         </li>
         <li>
           <Link href="#" passHref>
-            <Heading as="a">Portfolio</Heading>
+            <Heading as="a">/uses</Heading>
+          </Link>
+        </li>
+        <li>
+          <Link href="#" passHref>
+            <Heading as="a">Contact me</Heading>
+          </Link>
+        </li>
+        <li>
+          <Link href="#" passHref>
+            <Heading as="a">My experience</Heading>
           </Link>
         </li>
       </NavLinks>

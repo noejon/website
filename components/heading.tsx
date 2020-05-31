@@ -46,18 +46,17 @@ const HeadingWrapper = styled.h1<HeadingProps>`
   z-index: 1;
   font-family: ${({ as, theme }): string =>
     as === 'a' && `${theme.fonts.heading}`};
-  color: ${({ as, theme }): string =>
-    as === 'a' && `${theme.colors.darkerGrey}`};
+  color: ${({ as, theme }): string => as === 'a' && `${theme.colors.black}`};
 
   &:before {
-    width: 0.75em;
-    height: 1em;
+    width: 0.7em;
+    height: 0.7em;
     background: ${({ theme }): string => theme.colors.main};
     content: '';
     pointer-events: none;
     position: absolute;
     z-index: -1;
-    transform: translateY(0.05rem);
+    transform: translateY(-0.1rem) translateX(-0.4rem);
     ${({ as }): string | undefined => as === 'a' && `visibility: hidden;`};
   }
 
