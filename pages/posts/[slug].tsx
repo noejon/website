@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-// import Container from '../../components/container'
 import PostBody from '../../components/post-body';
 import Header from '../../components/header';
 import PostHeader from '../../components/post-header';
@@ -12,11 +11,11 @@ import { CMS_NAME } from '../../lib/constants';
 import markdownToHtml from '../../lib/markdownToHtml';
 import { PostItem } from '../../interfaces';
 
-type props = {
+type Props = {
   post: PostItem;
 };
 
-const Post: React.FunctionComponent<props> = ({ post }) => {
+const Post: React.FunctionComponent<Props> = ({ post }) => {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -40,7 +39,6 @@ const Post: React.FunctionComponent<props> = ({ post }) => {
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
-                author={post.author}
               />
               <PostBody content={post.content} />
             </article>
@@ -60,7 +58,6 @@ export async function getStaticProps({ params }) {
     'title',
     'date',
     'slug',
-    'author',
     'content',
     'ogImage',
     'coverImage',

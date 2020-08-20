@@ -76,3 +76,7 @@ Article ideas:
 - TIL - Global Styles Theme
 - Themes and typescript
 - hamburger menu
+
+
+TODO:
+- optimise images : https://github.com/cyrilwanner/next-optimized-images ???

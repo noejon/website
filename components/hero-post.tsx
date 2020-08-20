@@ -1,11 +1,8 @@
-import { Author } from '../interfaces';
-import Avatar from './avatar';
 import Date from './date';
 import CoverImage from './cover-image';
 import Link from 'next/link';
 
-type props = {
-  author: Author;
+type Props = {
   coverImage: string;
   date: string;
   excerpt: string;
@@ -13,8 +10,7 @@ type props = {
   title: string;
 };
 
-const HeroPost: React.FunctionComponent<props> = ({
-  author,
+const HeroPost: React.FunctionComponent<Props> = ({
   coverImage,
   date,
   excerpt,
@@ -39,7 +35,6 @@ const HeroPost: React.FunctionComponent<props> = ({
         </div>
         <div>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          <Avatar name={author.name} picture={author.picture} />
         </div>
       </div>
     </section>

@@ -1,10 +1,4 @@
-export type Author = {
-  name: string;
-  picture: string;
-};
-
 export type Post = {
-  author: Author;
   date: string;
   coverImage: string;
   excerpt: string;
@@ -17,7 +11,6 @@ export type OgImage = {
 };
 
 export type PostItem = {
-  author?: Author;
   content?: string;
   date?: string;
   coverImage?: string;

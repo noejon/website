@@ -49,8 +49,8 @@ const HeadingWrapper = styled.h1<HeadingProps>`
   color: ${({ as, theme }): string => as === 'a' && `${theme.colors.black}`};
 
   &:before {
-    width: 0.7em;
-    height: 0.7em;
+    width: 0.72em;
+    height: 0.72em;
     background: ${({ theme }): string => theme.colors.main};
     content: '';
     pointer-events: none;

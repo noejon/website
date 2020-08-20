@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 
 export const Navigation = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 1rem;
 
   @media screen and (max-width: ${({ theme }): string =>
       theme.breakpoints.md}) {

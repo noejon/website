@@ -1,13 +1,13 @@
 import cn from 'classnames';
 import Link from 'next/link';
 
-type props = {
+type Props = {
   slug?: string;
   src: string;
   title: string;
 };
 
-const CoverImage: React.FunctionComponent<props> = ({ title, src, slug }) => {
+const CoverImage: React.FunctionComponent<Props> = ({ title, src, slug }) => {
   const image = (
     <img
       src={src}
