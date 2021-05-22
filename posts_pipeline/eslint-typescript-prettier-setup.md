@@ -11,6 +11,7 @@ npm install --save-dev eslint prettier @typescript-eslint/parser @typescript-esl
 ```
 
 What did we just install:
+
 - `eslint`: 
 - `@typescript-eslint/parser`:
 - `@typescript-eslint/eslint-plugin`:
@@ -68,3 +69,38 @@ We add the following configuration:
   "source.fixAll.eslint": true
 },
 ```
+
+we also need to add a [extenstion](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
+In settings.json we need to add the following:
+
+```json
+"eslint.validate": [
+  "typescript",
+  "typescriptreact"
+]
+```
+
+The last thing left for us is to allow us to run eslint in the command line. For that we will create as new script in   `package.json`
+
+```json
+"lint": "eslint --ext ts,tsx .",
+"lint.fix": "npm run lint -- --fix"
+```
+
+If we were to run a javascript project, we would not need to specify the extension. But we are working with typescript files (.ts and .tsx for react), so we need to specify the extensions eslint will be ran on. The '.' represents the folder on which we want to run eslint, in our case the root folder.
+For anyone who works on a hybrid project (javascript and typescript), just add the `js,jsx` extensions to the script.
+
+The last thing we will do is add an `.eslintignore` file, to avoid running our linter on our output folder, which we will name `/dist`'.
+
+```zsh
+touch .eslintignore
+```
+
+and add
+
+```txt
+/dist
+```
+
+That's it, eslint will never run on this folder anymore. We don't need to exclude `node_modules` as it is ignored by default in eslint.

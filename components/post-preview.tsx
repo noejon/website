@@ -1,28 +1,24 @@
-import {Author} from '../interfaces'
-import Avatar from './avatar'
-import Date from './date'
-import CoverImage from './cover-image'
-import Link from 'next/link'
+import Date from './date';
+import CoverImage from './cover-image';
+import Link from 'next/link';
 
-type props = {
-  author: Author,
-  coverImage: string,
-  date: string,
-  excerpt: string,
-  slug: string,
-  title: string
-}
+type Props = {
+  coverImage: string;
+  date: string;
+  excerpt: string;
+  slug: string;
+  title: string;
+};
 
-const PostPreview: React.FunctionComponent<props> = ({
-  author,
+const PostPreview: React.FunctionComponent<Props> = ({
   coverImage,
   date,
   excerpt,
   slug,
-  title
+  title,
 }) => {
   return (
-    <div>
+    <>
       <div className="mb-5">
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
@@ -35,9 +31,8 @@ const PostPreview: React.FunctionComponent<props> = ({
         <Date dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default PostPreview
+export default PostPreview;
